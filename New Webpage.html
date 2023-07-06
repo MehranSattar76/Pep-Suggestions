@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pep Suggestions</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Set a modern color scheme */
+    :root {
+      --primary-color: #336699;
+      --secondary-color: #66cc99;
+      --text-color: #333;
+    }
+
+    /* Style the header */
+    header {
+      background: var(--primary-color);
+      padding: 10px;
+      text-align: center;
+      color: #fff;
+    }
+
+    /* Style the content section */
+    .content {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .search-form {
+      margin-bottom: 20px;
+    }
+
+    .search-input {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+    }
+
+    .search-button {
+      padding: 10px 20px;
+      background: var(--secondary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    /* Style the footer */
+    footer {
+      background: var(--primary-color);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 600px) {
+      .search-input {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pep Suggestions with You Chat</h1>
+  </header>
+
+  <section class="content">
+    <form class="search-form" onsubmit="event.preventDefault(); searchYouChat()">
+      <input type="text" class="search-input" id="searchInput" placeholder="Pep Suggestions" required>
+      <button type="submit" class="search-button">YouChat</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Pep Suggestions. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function searchYouChat() {
+      var searchQuery = document.getElementById('searchInput').value;
+      var items = [
+        'A kick up the butt to do some exercise',
+        'Feeling overwhelmed',
+        'Feeling lonely',
+        'When you didn\'t get the job',
+        'Feeling stuck',
+        'A pep to get you running (for non runners)',
+        'Accepting that someone you love might never change',
+        'Activist fatigue',
+        'An em-brace to get you to the dentist',
+        'Backing yourself to \'dream, dare, do\'',
+        'Bearing the brunt of someone else\'s anger',
+        'Big meeting gee up',
+        'Blushing and crushing - dealing with a crush',
+        'Body hair shame',
+        'Bullying guilt (When you are the bully, don\'t want to be, - can\'t get out of the cycle)',
+        'Can\'t stop crying',
+        'Can\'t stop scrolling',
+        'Chill morning high five',
+        'Conflict with teachers',
+        'Dealing with a heartbreak',
+        'Dealing with racism (comforting/ bolstering the person that experiences racism)',
+        'Death of a beloved pet',
+        'Double Shot Morning High Five',
+        'Exams stress (Gee up for an exam)',
+        'Fear of looking the fool',
+        'Feel you\'ve passed your peak?',
+        'Feeling angry',
+        'Feeling bleurgh',
+        'Feeling bored',
+        'Feeling embarassed',
+        'Feeling FOMO',
+        'Feeling frumpy',
+        'Feeling like a burden',
+        'Feeling out of sorts (you don\'t know what\'s wrong)',
+        'Feeling overwhelmed',
+        'Feeling lonely',
+        'Feeling stuck',
+        'Feeling vulnerable',
+        'Fighting with a friend',
+        'First day of work confidence boost.',
+        'For leaders without mentors',
+        'Gee up for a date',
+        'Gee up for your audition',
+        'Gee up to get to school (feeling anxious about going to school)',
+        'Gee up to start the week',
+        'Goodnight pep',
+        'Got your period at school',
+        'Guidebook: asking for help from a younger gen',
+        'Guilty working parent antidote',
+        'Help, my parents are separating',
+        'Help! I accidentally screwed up someone\'s pronouns',
+        'Help! My friend is talking about me behind my back',
+        'I don\'t fit in (friends have more money)',
+        'I feel gross in everything I wear',
+        'I got dumped today/ this week',
+        'I just found out there is a group chat without me in it',
+        'I miss my ex-partner',
+        'I think I might be gay',
+        'I\'m being forced to label myself',
+        'Imposter syndrome remedy',
+        'Insomnia Salve',
+        'LOST! One sense of humour',
+        'Moved to a new place',
+        'Need a reminder you are queer enough',
+        'Need help saying \'no\'',
+        'Need to boost your disability pride',
+        'Need to remember how to listen to your gut',
+        'On the verge of burnout',
+        'Ordering at restaurants anxiety',
+        'Overthinking antidote',
+        'Permission slip to let myself rest',
+        'Pre P\'s test gee up',
+        'Public speaking jitters',
+        'Reminder everything will be ok',
+        'Salve for when you\'re going to be late',
+        'Scared about death',
+        'So I\'ve made a mistake',
+        'SOS for a tired carer',
+        'Speak up for yourself!',
+        'Spiralling antidote',
+        'Stop procrastinating!',
+        'Stressed from the responsibility of leadership',
+        'The gender dysphoria monster',
+        'Thick thigh appreciation post',
+        'Ugh, I don\'t feel like going to the party',
+        'When a friendship has drifted',
+        'When it feels like no one is interested in you romantically',
+        'When it feels like you\'re parenting your parents',
+        'When no one remembered your birthday',
+        'When queer community is just out of reach',
+        'When you are at a crossroads',
+        'When you didn\'t get the job',
+        'When you didn\'t get the results you wanted',
+        'When you feel the pressure of others’ expectations',
+        'When you have problematic neighbours',
+        'When you have to be the bigger person (take the high road)',
+        'When you need a verbal cuddle',
+        'When you need to be kinder to your body',
+        'When you need to forgive someone',
+        'When you need to get your shit together',
+        'When you need to hear you\'re doing a good job',
+        'When you need to remember that you are amazing/ enough',
+        'When you\'re anxious about a work event',
+        'When you\'re being bullied',
+        'When you\'re being gaslit at work',
+        'When you\'re the boss and can\'t be everyone\'s friend.',
+        'When you’ve been dumped by a wave of grief',
+        "When you've got comparititis",
+        "When you've had a knock to your confidence",
+        "When your friends are joking about something that's racist",
+        "When your kids are being assholes",
+        "While you're waiting",
+        "Whilst washing the dishes",
+        "Why can't I stop scrolling (Can't stop scrolling)",
+        "Worried things are too good to be true",
+        "You get everything all at once and now you're overwhelmed",
+        "Your trans-ness is a gift/ you exist."
+      ];
+
+      var itemsText = items.join(',\n');
+      var finalQuery = "From the list below, pick the 2 entries that are most similar to " + searchQuery + ' \n' + itemsText;
+      var searchURL = "https://www.you.com/search?q=" + encodeURIComponent(finalQuery) + "&fromSearchBar=true&tbm=youchat";
+      window.open(searchURL, '_blank');
+    }
+  </script>
+</body>
+</html>
